@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../widgets/app_scaffold.dart';
-import 'signup_screen.dart';
+import 'signin_screen.dart';
 
-class SigninScreen extends StatelessWidget {
-  const SigninScreen({super.key});
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +23,16 @@ class SigninScreen extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      // konten sign-in berada di sini
+                      // konten sign-up berada di sini
                       SizedBox(height: screenHeight * 0.1),
 
                       // TODO: Add logo here
 
                       SizedBox(height: screenHeight * 0.04),
 
-                      // Signin Title
+                      // Signup Title
                       Text(
-                        'Welcome Back!',
+                        'Join AnimeVerse!',
                         style: TextStyle(
                           fontSize: screenWidth * (isLargeScreen ? 0.06 : 0.1),
                           fontWeight: FontWeight.w800,
@@ -44,7 +44,7 @@ class SigninScreen extends StatelessWidget {
                       SizedBox(height: screenHeight * 0.01),
 
                       Text(
-                        'Sign in to continue your anime journey',
+                        'Create your account and start exploring',
                         style: TextStyle(
                           fontSize: screenWidth * 0.035,
                           fontWeight: FontWeight.w500,
@@ -124,33 +124,15 @@ class SigninScreen extends StatelessWidget {
                         obscureText: true,
                       ),
 
-                      SizedBox(height: screenHeight * 0.01),
-                      // Forgot Password
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: TextButton(
-                          child: Text(
-                            'Forgot Password?',
-                            style: TextStyle(
-                              fontSize: screenWidth * 0.035,
-                              color: Colors.blue.shade300,
-                            ),
-                          ),
-                          onPressed: () {
-                            // TODO: Implement forgot password functionality
-                          },
-                        ),
-                      ),
-
                       SizedBox(height: screenHeight * 0.03),
 
-                      // Sign In Button
+                      // Sign up Button
                       SizedBox(
                         width: double.infinity,
                         height: screenHeight * 0.075,
                         child: ElevatedButton(
                           onPressed: () {
-                            // TODO: Implement sign in functionality
+                            // TODO: Implement sign up functionality
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue.withValues(alpha: 0.8),
@@ -161,7 +143,7 @@ class SigninScreen extends StatelessWidget {
                             elevation: 5,
                           ),
                           child: Text(
-                            'Sign In',
+                            'Sign Up',
                             style: TextStyle(
                               fontSize: screenWidth * 0.045,
                               fontWeight: FontWeight.w600,
@@ -243,7 +225,7 @@ class SigninScreen extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Don't have an account? ",
+                            "Already have an account? ",
                             style: TextStyle(
                               fontSize: screenWidth * 0.04,
                               color: Colors.white70,
@@ -253,11 +235,11 @@ class SigninScreen extends StatelessWidget {
                             onPressed: () {
                               Navigator.push(
                                 context,
-                                MaterialPageRoute(builder: (context) => const SignupScreen()),
+                                MaterialPageRoute(builder: (context) => const SigninScreen()),
                               );
                             },
                             child: Text(
-                              'Sign Up',
+                              'Sign In',
                               style: TextStyle(
                                 fontSize: screenWidth * 0.04,
                                 fontWeight: FontWeight.w600,
