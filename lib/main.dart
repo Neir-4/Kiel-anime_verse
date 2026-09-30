@@ -1,3 +1,5 @@
+
+import 'package:kiel_anime_verse/config/routes.dart';
 import 'package:kiel_anime_verse/screens/signin_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -10,10 +12,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'AnimeVerse',
-      theme: ThemeData(fontFamily: 'Urbanist'),
-      home: const SigninScreen(),
+      theme: ThemeData(
+        fontFamily: 'Urbanist',
+      ),
+      routerConfig: createRouter(),
       debugShowCheckedModeBanner: false,
     );
   }
