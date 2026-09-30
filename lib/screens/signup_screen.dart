@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
+import '../config/routes.dart';
 import '../widgets/app_scaffold.dart';
-import 'signin_screen.dart';
 
-class SignupScreen extends StatelessWidget {
-  const SignupScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class SignupScreen extends StatelessWidget {
 
                       SizedBox(height: screenHeight * 0.04),
 
-                      // Signup Title
+                      // SignUp Title
                       Text(
                         'Join AnimeVerse!',
                         style: TextStyle(
@@ -126,13 +127,15 @@ class SignupScreen extends StatelessWidget {
 
                       SizedBox(height: screenHeight * 0.03),
 
-                      // Sign up Button
+
+                      // Sign Up Button
                       SizedBox(
                         width: double.infinity,
                         height: screenHeight * 0.075,
                         child: ElevatedButton(
                           onPressed: () {
                             // TODO: Implement sign up functionality
+                            context.go(AppRoutes.home);
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue.withValues(alpha: 0.8),
@@ -183,13 +186,13 @@ class SignupScreen extends StatelessWidget {
                       ),
 
                       SizedBox(height: screenHeight * 0.03),
-                      // Sign in with Google
+                      // Sign up with Google
                       SizedBox(
                         width: double.infinity,
                         height: screenHeight * 0.075,
                         child: ElevatedButton.icon(
                           onPressed: () {
-                            // TODO: Implement Google sign in functionality
+                            // TODO: Implement Google sign up functionality
                           },
                           icon: SvgPicture.asset(
                             'assets/images/google_icon.svg',
@@ -220,7 +223,7 @@ class SignupScreen extends StatelessWidget {
 
                       SizedBox(height: screenHeight * 0.04),
 
-                      // Sign up link
+                      // Sign in link
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -233,10 +236,8 @@ class SignupScreen extends StatelessWidget {
                           ),
                           TextButton(
                             onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => const SigninScreen()),
-                              );
+                              // TODO: Navigate to sign in screen
+                              context.go(AppRoutes.signIn);
                             },
                             child: Text(
                               'Sign In',
@@ -251,8 +252,6 @@ class SignupScreen extends StatelessWidget {
                       ),
 
                       SizedBox(height: screenHeight * 0.05),
-
-
 
 
                     ],
